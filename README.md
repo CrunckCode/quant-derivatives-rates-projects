@@ -1,0 +1,13 @@
+# Quant, Derivatives and Rates Projects
+
+5 Python projects on quant, derivatives and rates. Each folder has the code, any output charts or data files, and a README covering what it does, the data, the method, results and honest limitations.
+
+All projects use real public market, rate or filing data wherever possible, built with AI assistance (Claude Code) as a build-and-learn exercise and checked against known results. Each README states what was real, what was synthetic and what the model cannot do.
+
+| Project | What it does |
+|---|---|
+| [Convertible Bond Valuation Model (Binomial Tree with Credit Spread)](Convertible_Bond_Valuation_Model) | A binomial-tree convertible bond pricer using credit-risk-adjusted discounting (Tsiveriotis-Fernandes-style: equity-like payoff paths discounted at the risk-free rate, debt-like payoff paths discounted at a credit-spread-adjusted rate), with issuer call provisions and call protection, on a real high-volatility underlying with a real market credit spread. |
+| [Exotic Option Pricing via Finite-Difference PDE (Crank-Nicolson)](Exotic_Option_Pricing_via_Finite_Difference_PDE) | A Crank-Nicolson finite-difference solver for the Black-Scholes PDE, validated against the closed-form Black-Scholes price on a real AAPL option, then extended to price an American put (early-exercise premium) and an up-and-out barrier call - the specific methodology (finite-difference PDE, not just Monte Carlo) that JPMorgan QTR-style Equity Derivatives Exotics JDs explicitly ask for. |
+| [FX Options Pricing and Volatility Surface (SABR)](FX_Options_Pricing_and_Volatility_Surface_SABR) | A Garman-Kohlhagen FX option pricer with the real delta-to-strike conversion FX markets actually use, a constructed-but-real-vol-anchored implied-vol smile (real ATM vol plus real-market-typical 25-delta risk-reversal/butterfly shape), SABR calibration to that smile, and a quantified dollar mispricing from ignoring the smile entirely. |
+| [Municipal Bond Relative Value and Yield Curve Model](Municipal_Bond_Relative_Value_and_Yield_Curve_Model) | An AAA municipal benchmark curve built from the real US Treasury curve applied against typical, publicly-documented municipal/Treasury (M/T) ratio conventions by tenor, plus a 40-bond relative-value screen that flags bonds trading cheap or rich to that curve after a rating- and sector-based fair-spread adjustment. |
+| [Rates Curve Trading and Carry-and-Roll Strategy Model](Rates_Curve_Trading_and_Carry_and_Roll_Strategy_Model) | Carry-and-roll analysis and DV01-neutral curve trade construction (2s10s steepener, 2s10s30s butterfly) on the real live US Treasury curve, with scenario-based P&L attribution separating carry from curve-shape change. |
